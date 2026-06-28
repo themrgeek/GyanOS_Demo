@@ -42,7 +42,7 @@ function getBrowserSpeechRecognition(): (new () => SpeechRecognitionInstance) | 
     | null;
 }
 
-export function useSpeechRecognition(): SpeechRecognitionHook {
+export function useSpeechRecognition(lang: string = "en-US"): SpeechRecognitionHook {
   const [transcript, setTranscript] = useState("");
   const [interimTranscript, setInterimTranscript] = useState("");
   const [isRecording, setIsRecording] = useState(false);
@@ -63,7 +63,7 @@ export function useSpeechRecognition(): SpeechRecognitionHook {
     const recognition = new SpeechRecognitionClass();
     recognition.continuous = true;
     recognition.interimResults = true;
-    recognition.lang = "en-US";
+    recognition.lang = lang;
 
     recognition.onresult = (event: SpeechRecognitionEvent) => {
       let finalText = "";
@@ -121,7 +121,7 @@ export function useSpeechRecognition(): SpeechRecognitionHook {
       setIsRecording(false);
       shouldRestartRef.current = false;
     }
-  }, []);
+  }, [lang]);
 
   const stopRecording = useCallback(() => {
     shouldRestartRef.current = false;

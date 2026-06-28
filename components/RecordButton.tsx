@@ -23,7 +23,7 @@ export function RecordButton({ isRecording, onStart, onStop, disabled }: RecordB
       {isRecording && (
         <span
           className="animate-pulse-ring absolute inset-0 rounded-full"
-          style={{ backgroundColor: "var(--error)", opacity: 0.4 }}
+          style={{ backgroundColor: "var(--error)", opacity: 0.3 }}
         />
       )}
       <span className="relative flex items-center gap-2">

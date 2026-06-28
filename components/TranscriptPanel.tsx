@@ -11,17 +11,17 @@ export function TranscriptPanel({ transcript, interimTranscript, error }: Transc
 
   return (
     <div
-      className="flex h-full flex-col rounded-xl p-5"
-      style={{ backgroundColor: "var(--surface)" }}
+      className="flex h-full flex-col rounded-xl border p-5"
+      style={{ backgroundColor: "var(--surface)", borderColor: "var(--border)" }}
     >
-      <h2 className="mb-4 text-lg font-semibold" style={{ color: "var(--primary-light)" }}>
+      <h2 className="mb-4 text-lg font-semibold" style={{ color: "var(--primary)" }}>
         Live Transcript
       </h2>
 
       {error && (
         <div
           className="mb-3 rounded-lg px-4 py-3 text-sm"
-          style={{ backgroundColor: "rgba(231, 76, 60, 0.15)", color: "var(--error)" }}
+          style={{ backgroundColor: "rgba(192, 57, 43, 0.1)", color: "var(--error)" }}
           role="alert"
         >
           {error}

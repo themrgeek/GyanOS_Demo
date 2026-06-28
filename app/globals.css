@@ -1,14 +1,17 @@
 @import "tailwindcss";
 
 :root {
-  --background: #1A1A2E;
-  --foreground: #E8E8F0;
-  --primary: #1A56A4;
-  --primary-light: #2B6FC2;
-  --surface: #242440;
-  --surface-light: #2E2E50;
-  --error: #E74C3C;
-  --muted: #8888AA;
+  --background: #F5F0E8;
+  --foreground: #2D2A26;
+  --primary: #8B6914;
+  --primary-light: #A67C1A;
+  --surface: #FFFFFF;
+  --surface-light: #EDE7DA;
+  --error: #C0392B;
+  --muted: #8C8478;
+  --accent: #D4A843;
+  --success: #27AE60;
+  --border: #D9D0C1;
 }
 
 @theme inline {
@@ -51,4 +54,9 @@ body {
 
 .animate-blink {
   animation: blink 1s step-end infinite;
+}
+
+select option {
+  background-color: var(--surface);
+  color: var(--foreground);
 }

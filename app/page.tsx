@@ -5,6 +5,7 @@ import { useSpeechRecognition } from "@/hooks/useSpeechRecognition";
 import { RecordButton } from "@/components/RecordButton";
 import { TranscriptPanel } from "@/components/TranscriptPanel";
 import { NotesPanel } from "@/components/NotesPanel";
+import { NavBar } from "@/components/NavBar";
 
 export default function Home() {
   const {
@@ -73,28 +74,12 @@ export default function Home() {
 
   return (
     <div className="flex min-h-screen flex-col">
-      {/* Header */}
-      <header
-        className="flex items-center justify-between border-b px-6 py-4"
-        style={{ borderColor: "var(--surface-light)" }}
-      >
-        <h1 className="text-xl font-bold tracking-tight">
-          <span style={{ color: "var(--primary-light)" }}>GyanOS</span>
-          <span style={{ color: "var(--muted)" }}> — Classroom Note Taker</span>
-        </h1>
-        <span
-          className="rounded-full px-3 py-1 text-xs font-medium"
-          style={{ backgroundColor: "var(--surface)", color: "var(--muted)" }}
-        >
-          Demo
-        </span>
-      </header>
+      <NavBar />
 
-      {/* Error banner */}
       {displayError && (
         <div
           className="mx-6 mt-4 flex items-center justify-between rounded-lg px-4 py-3 text-sm"
-          style={{ backgroundColor: "rgba(231, 76, 60, 0.15)", color: "var(--error)" }}
+          style={{ backgroundColor: "rgba(192, 57, 43, 0.1)", color: "var(--error)" }}
           role="alert"
         >
           <span>{displayError}</span>
@@ -108,7 +93,6 @@ export default function Home() {
         </div>
       )}
 
-      {/* Two-panel layout */}
       <main className="flex flex-1 gap-4 overflow-hidden p-6">
         <div className="flex-1 min-w-0">
           <TranscriptPanel
@@ -122,10 +106,9 @@ export default function Home() {
         </div>
       </main>
 
-      {/* Controls */}
       <footer
         className="flex items-center justify-center gap-4 border-t px-6 py-4"
-        style={{ borderColor: "var(--surface-light)" }}
+        style={{ borderColor: "var(--border)" }}
       >
         <RecordButton
           isRecording={isRecording}

@@ -12,11 +12,11 @@ export function NotesPanel({ notes, isGenerating }: NotesPanelProps) {
 
   return (
     <div
-      className="flex h-full flex-col rounded-xl p-5"
-      style={{ backgroundColor: "var(--surface)" }}
+      className="flex h-full flex-col rounded-xl border p-5"
+      style={{ backgroundColor: "var(--surface)", borderColor: "var(--border)" }}
       aria-live="polite"
     >
-      <h2 className="mb-4 text-lg font-semibold" style={{ color: "var(--primary-light)" }}>
+      <h2 className="mb-4 text-lg font-semibold" style={{ color: "var(--primary)" }}>
         Generated Notes
       </h2>
 
@@ -27,10 +27,10 @@ export function NotesPanel({ notes, isGenerating }: NotesPanelProps) {
             from the transcript.
           </p>
         ) : (
-          <div className="prose prose-invert prose-sm max-w-none">
+          <div className="prose prose-sm max-w-none">
             <Markdown>{notes}</Markdown>
             {isGenerating && (
-              <span className="animate-blink inline-block h-4 w-1.5 align-text-bottom" style={{ backgroundColor: "var(--primary-light)" }} />
+              <span className="animate-blink inline-block h-4 w-1.5 align-text-bottom" style={{ backgroundColor: "var(--primary)" }} />
             )}
           </div>
         )}
